@@ -24,11 +24,21 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
+            'first_name' => fake()->firstName(),
+            'last_name' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
+            'age' => fake()->numberBetween(1, 500),
+            'height' => fake()->optional()->randomFloat(1, 155, 195),
+            'weight' => fake()->optional()->randomFloat(1, 45, 120),
+            'planet' => fake()->randomElement([
+            'Zarkona Prime', 'Vurox III', 'Klynthor', 'Nexal V', 'Urk\'tal', 
+            'Drosna Beta', 'Fjornis IX', 'Bex\'char', 'Y\'narra', 'Lontys']), // Planète fictive
+            'language' => fake()->randomElement([
+            'Zyntharn', 'Oolbian', 'Xorrish', 'Dralk', 'Vintar', 
+            'Kytherian', 'Praxan', 'Maldorn', 'Reklith', 'Xelvarian']), // Langue fictive
         ];
     }
 
