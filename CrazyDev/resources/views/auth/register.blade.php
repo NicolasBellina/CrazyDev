@@ -4,36 +4,48 @@
         <form action="{{ route('users.store') }}" method="POST" class="form" id="form1" enctype="multipart/form-data">
             @csrf
             <h2 class="form__title">S'inscrire</h2>
-            <label for="nom">Nom</label>
-            <input type="text" name="last_name" placeholder="Nom" class="input" required />
+            <label for="nom">Nom<span class="required-field">*</span></label>
+            <input type="text" name="last_name" placeholder="Nom" class="input" id="nom" required />
             
-            <label for="prenom">Prénom</label>
-            <input type="text" name="first_name" placeholder="Prénom" class="input" required />
+            <label for="prenom">Prénom<span class="required-field">*</span></label>
+            <input type="text" name="first_name" placeholder="Prénom" class="input" id="prenom" required />
             
-            <label for="email">E-mail</label>
-            <input type="email" name="email" placeholder="Email" class="input" required />
+            <label for="email">E-mail<span class="required-field">*</span></label>
+            <input type="email" name="email" placeholder="Email" class="input" id="email" required />
             
-            <label for="password">Password</label>
-            <input type="password" name="password" placeholder="Password" class="input" required />
+            <label for="password">Mot de passe<span class="required-field">*</span></label>
+            <input type="password" name="password" placeholder="Mot de passe (4 caractères minimum)" class="input" id="password" min="4" required />
             
-            <label for="age">Age</label>
-            <input type="number" name="age" min="0" class="input" placeholder="Votre age" required>
+			<h3>Un peu plus à votre sujet...</h3>
 
-            <label for="poids">Poids</label>
-            <input type="number" name="weight" min="0" class="input" placeholder="Poids en kilos" required>
-            
-            <label for="taille">Taille</label>
-            <input type="number" name="height" min="0" class="input" placeholder="Taille en cm" required>
+            <label for="age">Age<span class="required-field">*</span></label>
+            <input type="number" name="age" min="0" class="input" placeholder="Votre âge" id="age" required>
 
-            <label for="langue">Langue</label>
-            <input type="text" name="language" placeholder="Langue" class="input" required />
 
-            <label for="planete">Planète</label>
-            <input type="text" name="planet" placeholder="Planète" class="input" required />
+			<div class="optional-info">
+				<div>
+					<label for="poids">Poids</label>
+					<input type="number" name="weight" min="0" class="input" placeholder="Poids en kilos" id="poids">
+				</div>
+
+				<div>
+					<label for="taille">Taille</label>
+					<input type="number" name="height" min="0" class="input" placeholder="Taille en cm" id="taille">
+				</div>
+				
+			</div>
+
+
+            <label for="langue">Langue<span class="required-field">*</span></label>
+            <input type="text" name="language" placeholder="Langue" class="input" id="langue" required />
+
+            <label for="planete">Planète<span class="required-field">*</span></label>
+            <input type="text" name="planet" placeholder="Planète" class="input" id="planete" required />
             
             <label for="profile-image">Image de profil</label>
-            <input type="file" name="avatar_path" accept="image/*" class="input">
+            <input type="file" name="avatar_path" accept="image/*" class="input" id="profile-image">
         
+			<div class="required-field-legend"><span class="required-field">*</span> : champ obligatoire</div>
             <button type="submit" class="btn">S'inscrire</button>
         </form>
         
@@ -61,23 +73,20 @@
 	--blue: #0367a6;
 	--lightblue: #008997;
 	--button-radius: 0.7rem;
-	--max-width: 758px;
-	--max-height: 600px;
+	--max-width: 1080px;
 	font-size: 16px;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 body {
 	align-items: center;
 	background-color: var(--white);
-	background: url("img/avatar/image de fond 2.png");
+	background: url("img/image de fond 2.png");
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: grid;
-	height: 100vh;
 	place-items: center;
-	overflow: hidden;
 }
 
 .form label {
@@ -93,7 +102,7 @@ body {
   display: block;
   width: 100%;
   padding: 0.5rem 0.75rem; 
-  margin-bottom: 1rem; 
+  margin-block: 0 1rem; 
   border: 1px solid var(--gray); 
   border-radius: 4px; 
   box-sizing: border-box; 
@@ -104,6 +113,12 @@ body {
 	margin: 0;
 	margin-bottom: 1.25rem;
 }
+
+.form__title~h3 {
+	font-weight: 300;
+	margin-block: 1rem 0;
+}
+
 .link {
 	color: var(--gray);
 	font-size: 0.9rem;
@@ -114,11 +129,10 @@ body {
 	background-color: var(--white);
 	border-radius: var(--button-radius);
 	box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25), 0 0.7rem 0.7rem rgba(0, 0, 0, 0.22);
-	height: var(--max-height);
+	height: 90%;
 	max-width: var(--max-width);
-	overflow: hidden;
 	position: relative;
-    overflow-y: auto;
+	overflow: hidden;
 	width: 100%;
 }
 .container__form {
@@ -154,7 +168,7 @@ body {
 }
 .overlay {
 	background-color: var(--lightblue);
-    background-image: url("img/avatar/lune.png");	
+    background-image: url("img/lune.png");	
     background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -223,11 +237,37 @@ body {
 	padding: 0 3rem;
 	height: 100%;
 	text-align: center;
+	overflow-y: auto;
 }
 .input {
 	background-color: #fff;
     border: none;
 	padding: 0.5rem 0.5rem;
-	margin: 0.5rem 0;
+	margin: 0.25rem 0;
 	width: 100%;
+}
+
+.input#age {
+	max-width: 25%;
+	align-self: flex-start;
+}
+
+.optional-info {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.required-field {
+	color: red;
+	font-weight: bold;
+	font-size: 90%;
+	vertical-align: top;
+	margin-left: .2rem;
+}
+
+.required-field-legend {
+	font-size: 75%;
+	font-style: oblique;
+	align-self: flex-start;
 }

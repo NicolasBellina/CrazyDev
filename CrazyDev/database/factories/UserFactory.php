@@ -39,6 +39,7 @@ class UserFactory extends Factory
             'language' => fake()->randomElement([
             'Zyntharn', 'Oolbian', 'Xorrish', 'Dralk', 'Vintar', 
             'Kytherian', 'Praxan', 'Maldorn', 'Reklith', 'Xelvarian']), // Langue fictive
+            'avatar_path' => 'img/avatar/par_default.png'
         ];
     }
 

@@ -19,11 +19,6 @@ Route::middleware('auth')->group(function () {
 });
 
 
-
-
-// Route pour la partie Register
-use App\Http\Controllers\Auth\RegisterController;
-
 Route::post('/user', [UsersController::class, 'store'])->name('users.store');
 
 require __DIR__.'/auth.php';

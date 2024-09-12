@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             'weight' => 75.4,
             'planet' => 'Zarkona Prime',
             'language' => 'Oolbian',
+            'avatar_path' => 'img/avatar/par_default.png'
         ]);
     }
 }

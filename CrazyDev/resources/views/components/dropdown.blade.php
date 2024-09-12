@@ -28,7 +28,7 @@ $width = match ($width) {
             class="absolute z-50 mt-2 {{ $width }} rounded-md shadow-lg {{ $alignmentClasses }}"
             style="display: none;"
             @click="open = false">
-        <div class="rounded-md ring-1 ring-black ring-opacity-5 {{ $contentClasses }} hover-highlight" style="background-color: #A91D3A; color: #EEEEEE; box-shadow: 0 -5px 5px 1px green">
+        <div class="rounded-md ring-1 ring-black ring-opacity-5 hover-highlight" style="background-color: #A91D3A; color: #EEEEEE; box-shadow: 0 -3px 5px 2px rgba(25,25,25,0.2)">
             {{ $content }}
         </div>
     </div>
