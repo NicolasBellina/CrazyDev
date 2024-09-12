@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Post;
+use App\Models\Comment;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -15,8 +17,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(50)->create();
-
+        
         User::factory()->create([
             'first_name' => 'admin',
             'last_name' => 'admin',
@@ -27,6 +28,14 @@ class DatabaseSeeder extends Seeder
             'weight' => 75.4,
             'planet' => 'Zarkona Prime',
             'language' => 'Oolbian',
+        ]);
+        
+        User::factory(20)->create();
+
+        Post::factory()->create([
+            'title' => 'Général',
+            'body' => 'Vous pouvez échangez dans les commentaires de ce fil de conversation général',
+            'user_id' => 1
         ]);
     }
 }
