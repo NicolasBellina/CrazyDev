@@ -103,7 +103,7 @@
 		background-color: var(--white);
 		border-radius: var(--button-radius);
 		box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25), 0 0.7rem 0.7rem rgba(0, 0, 0, 0.22);
-		height: 90%;
+		height: 75%;
 		max-width: var(--max-width);
 		position: relative;
 		overflow: hidden;
