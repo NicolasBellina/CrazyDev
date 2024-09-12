@@ -47,7 +47,7 @@ N’oubliez pas, aucun commentaire n’est trop petit ou insignifiant. Votre voi
         Comment::factory(6)->create([
             'post_id' => 1,
             'user_id' => fn() => User::inRandomOrder()->whereBetween('id', [2, 10])->first()->id,
-            'body' => 'Bonjour !',
+            'body' => 'Bonjour ! C\'est mon premier commentaire :)',
         ]);
     }
 }

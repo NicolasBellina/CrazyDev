@@ -30,6 +30,7 @@
     <div class="container__overlay">
         <div class="overlay">
             <div class="overlay__panel overlay--left">
+				<span class="redirect">Vous n'avez pas de compte ? <a href="{{ route('register') }}">Créer un compte</a></span>
             </div>
             <div class="overlay__panel overlay--right">
                 <button class="btn" id="signUp">Se connecter</button>
@@ -170,6 +171,9 @@
 	}
 	.overlay--left {
 		transform: translateX(-20%);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
 	}
 	.container.right-panel-active .overlay--left {
 		transform: translateX(0);
@@ -257,3 +261,8 @@
 		border-radius: 15px;
 		margin-top: 1rem;
 	}
+	
+.redirect {
+	margin-bottom: 2rem;
+	color: #EEEEEE;
+}

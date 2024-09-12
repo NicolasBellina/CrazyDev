@@ -35,12 +35,36 @@
 				
 			</div>
 
-
-            <label for="langue">Langue<span class="required-field">*</span></label>
-            <input type="text" name="language" placeholder="Langue" class="input" id="langue" required />
-
-            <label for="planete">Planète<span class="required-field">*</span></label>
-            <input type="text" name="planet" placeholder="Planète" class="input" id="planete" required />
+			<label for="langue">Langue<span class="required-field">*</span></label>
+			<select name="language" id="langue" class="input" required>
+				<option value="">Choisir une langue</option>
+				<option value="Zyntharn">Zyntharn</option>
+				<option value="Oolbian">Oolbian</option>
+				<option value="Xorrish">Xorrish</option>
+				<option value="Dralk">Dralk</option>
+				<option value="Vintar">Vintar</option>
+				<option value="Kytherian">Kytherian</option>
+				<option value="Praxan">Praxan</option>
+				<option value="Maldorn">Maldorn</option>
+				<option value="Reklith">Reklith</option>
+				<option value="Xelvarian">Xelvarian</option>
+			</select>
+			
+			<label for="planete">Planète<span class="required-field">*</span></label>
+			<select name="planet" id="planete" class="input" required>
+				<option value="">Choisir une planète</option>
+				<option value="Zarkona Prime">Zarkona Prime</option>
+				<option value="Vurox III">Vurox III</option>
+				<option value="Klynthor">Klynthor</option>
+				<option value="Nexal V">Nexal V</option>
+				<option value="Urk'tal">Urk'tal</option>
+				<option value="Drosna Beta">Drosna Beta</option>
+				<option value="Fjornis IX">Fjornis IX</option>
+				<option value="Bex'char">Bex'char</option>
+				<option value="Y'narra">Y'narra</option>
+				<option value="Lontys">Lontys</option>
+			</select>
+			
             
             <label for="profile-image">Image de profil</label>
             <input type="file" name="avatar_path" accept="image/*" class="input" id="profile-image">
@@ -56,6 +80,7 @@
     <div class="container__overlay">
         <div class="overlay">
             <div class="overlay__panel overlay--left">
+				<span class="redirect">Déjà un compte ? <a href="{{ route('login') }}">Se connecter</a></span>
             </div>
             <div class="overlay__panel overlay--right">
                 <button class="btn" id="signUp">S'inscrire</button>
@@ -196,6 +221,9 @@ body {
 }
 .overlay--left {
 	transform: translateX(-20%);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
 }
 .container.right-panel-active .overlay--left {
 	transform: translateX(0);
@@ -270,4 +298,9 @@ body {
 	font-size: 75%;
 	font-style: oblique;
 	align-self: flex-start;
+}
+
+.redirect {
+	margin-bottom: 2rem;
+	color: #EEEEEE;
 }
