@@ -17,7 +17,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased" style="cursor: url('/img/cursor/cursor_rocket.png'), auto;">
         <div class="min-h-screen" style="background-color: #151515;">
             @include('layouts.navigation')
 

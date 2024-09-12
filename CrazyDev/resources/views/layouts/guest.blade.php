@@ -26,6 +26,7 @@
                 background-color: var(--clr-bg);
                 color: var(--clr-txt);
                 font-size: 40px;
+                cursor: url('/img/cursor/cursor_rocket.png'), auto;
             }
         </style>
 
