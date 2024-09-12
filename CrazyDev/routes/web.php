@@ -3,14 +3,20 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ForumController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/forum', function () {
-    return view('forum');
-})->middleware(['auth', 'verified'])->name('forum');
+
+Route::middleware('auth', 'verified')->group(function () {
+    Route::get('/forum', [ForumController::class, 'index'])->name('forum');
+    Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
+    Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

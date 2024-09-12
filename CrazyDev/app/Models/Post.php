@@ -15,7 +15,8 @@ class Post extends Model
     protected $fillable = [
         'title',
         'body',
-        'user_id', // Assuming each post belongs to a user (the author)
+        'user_id',
+        'is_main_thread',
     ];
 
     // A post belongs to a user (author)

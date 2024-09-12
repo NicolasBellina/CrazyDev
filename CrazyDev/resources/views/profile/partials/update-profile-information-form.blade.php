@@ -19,13 +19,13 @@
 
         <div>
             <x-input-label for="first-name" :value="__('Prénom')" />
-            <x-text-input id="first-name" name="first-name" type="text" class="mt-1 block w-full" :value="old('name', $user->first_name)" required autofocus autocomplete="first-name" />
+            <x-text-input id="first-name" name="first_name" type="text" class="mt-1 block w-full" :value="old('name', $user->first_name)" required autofocus autocomplete="first-name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
         <div>
             <x-input-label for="last-name" :value="__('Nom')" />
-            <x-text-input id="last-name" name="last-name" type="text" class="mt-1 block w-full" :value="old('name', $user->last_name)" required autofocus autocomplete="last-name" />
+            <x-text-input id="last-name" name="last_name" type="text" class="mt-1 block w-full" :value="old('name', $user->last_name)" required autofocus autocomplete="last-name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
@@ -54,7 +54,7 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+            <x-primary-button>{{ __('Enregistrer') }}</x-primary-button>
 
             @if (session('status') === 'profile-updated')
                 <p
